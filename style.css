@@ -80,7 +80,7 @@ section { padding: 80px 0 24px; }
   margin-bottom: 56px;
 }
 .feature.reverse .feature-media { order: 2; }
-.feature-media img, .feature-media .ph {
+.feature-media img, .feature-media .ph, .feature-media video {
   border-radius: var(--radius); border: 1px solid var(--line); width: 100%; aspect-ratio: 16 / 10; object-fit: cover;
 }
 .feature h3 { font-size: 26px; margin: 0 0 10px; }
@@ -151,3 +151,5 @@ footer { border-top: 1px solid var(--line); text-align: center; padding: 24px; }
   .nav nav { display: none; }
   .lede { font-size: 18px; }
 }
+
+.caption { margin: 8px 2px 0; }

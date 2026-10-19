@@ -56,7 +56,9 @@
     <h2 class="section-title"><span class="mono">01</span> Featured research</h2>
     <article class="feature">
       <div class="feature-media">
-        <img src="assets/datum_tracking.png" alt="Closed-loop tracking of a VTOL takeoff by DATUM and baseline controllers" onerror="placeholder(this)">
+        <video src="assets/datum_landing.mp4" poster="assets/datum_landing.jpg" autoplay muted loop playsinline
+               aria-label="Closed-loop VTOL landing on an unseen flight: DATUM stays on the descent while the dense neural MPC drifts away"></video>
+        <p class="caption small">Landing on a flight the models never saw: DATUM (blue) holds the descent; learning every state (purple) drifts away.</p>
       </div>
       <div class="feature-body">
         <p class="tag mono">Learning-based MPC · VTOL · real time</p>
@@ -119,13 +121,13 @@
         <p>ROS 2 / ArduPilot stack for medical-delivery drones: weather-aware routing, energy-aware trajectories, real-time replanning, and MILP hub placement for the delivery network.</p>
       </article>
       <article class="card">
-        <img src="assets/ugv.jpg" alt="UGV navigating a construction site" onerror="placeholder(this)">
+        <img src="assets/francis.png" alt="UGV navigating a construction site" onerror="placeholder(this)">
         <p class="tag mono">UGV · prediction · safety</p>
         <h3>FRANCIS: navigation around people</h3>
         <p>Predictive control for an autonomous ground robot on construction sites, using learned models of worker behavior to keep clear of people and hazards.</p>
       </article>
       <article class="card">
-        <img src="assets/methane.jpg" alt="Drone tracking a gas plume" onerror="placeholder(this)">
+        <img src="assets/methane.png" alt="Drone tracking a gas plume" onerror="placeholder(this)">
         <p class="tag mono">UAV · perception · NMPC</p>
         <h3>Methane plume tracking</h3>
         <p>A drone that finds and follows gas plumes: CNN-based plume segmentation feeding a nonlinear MPC pursuit controller.</p>
