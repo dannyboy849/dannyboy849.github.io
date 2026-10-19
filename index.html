@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Daniel Vargas | Robotics &amp; Controls</title>
+<meta name="description" content="Daniel Vargas, Ph.D. candidate in controls at the University of Oklahoma: learning-based MPC, state estimation, and autonomy for UAVs and ground robots.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script>
+  // missing image -> labelled placeholder, so the page looks finished before photos are added
+  // (defined in the head: an image can fail before the end of the body is parsed)
+  function placeholder(img) {
+    const box = document.createElement("div");
+    box.className = "ph";
+    box.textContent = img.alt;
+    img.replaceWith(box);
+  }
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <a class="brand" href="#top">DV</a>
+  <nav>
+    <a href="#research">Research</a>
+    <a href="#hardware">Hardware</a>
+    <a href="#projects">Projects</a>
+    <a href="#publications">Publications</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- hero -->
+  <section class="hero">
+    <p class="eyebrow mono">Ph.D. Candidate · Mechanical Engineering (Controls) · University of Oklahoma</p>
+    <h1>Daniel Vargas</h1>
+    <p class="lede">I build controllers and estimators that let drones and ground robots fly and drive on their own: learning-based model predictive control, state estimation without GPS, and the software that puts them on real hardware.</p>
+    <div class="cta">
+      <a class="btn primary" href="assets/Daniel_Vargas_CV.pdf">Resume</a>
+      <a class="btn" href="https://github.com/dannyboy849">GitHub</a>
+      <a class="btn" href="https://www.linkedin.com/in/daniel-vargas-slydly/">LinkedIn</a>
+      <a class="btn" href="https://orcid.org/0009-0000-2877-847X">ORCID</a>
+    </div>
+    <ul class="chips">
+      <li>MPC / NMPC</li><li>Learning-based control</li><li>State estimation</li><li>SLAM</li>
+      <li>UAV / VTOL</li><li>ROS 2</li><li>ArduPilot SITL</li><li>PyTorch</li>
+    </ul>
+  </section>
+
+  <!-- featured research -->
+  <section id="research">
+    <h2 class="section-title"><span class="mono">01</span> Featured research</h2>
+    <article class="feature">
+      <div class="feature-media">
+        <img src="assets/datum_tracking.png" alt="Closed-loop tracking of a VTOL takeoff by DATUM and baseline controllers" onerror="placeholder(this)">
+      </div>
+      <div class="feature-body">
+        <p class="tag mono">Learning-based MPC · VTOL · real time</p>
+        <h3>DATUM: Learning Only What Matters</h3>
+        <p>A predictive controller for a 21.5-kg lift-plus-cruise VTOL that adds a neural-network correction only to the states where a held-out test shows learning helps, identified entirely from autopilot flight logs.</p>
+        <ul class="stats">
+          <li><strong>10×</strong><span>faster than the exact solve: 30 ms vs. 300 ms per step</span></li>
+          <li><strong>Best</strong><span>error in every wind scenario, on a flight the models never saw</span></li>
+          <li><strong>2–5×</strong><span>less run-to-run variation than learning every state</span></li>
+        </ul>
+        <p class="small">Validated across flights and against ArduPilot software-in-the-loop simulation with the real autopilot code. Manuscript in preparation.</p>
+        <div class="links">
+          <a href="https://github.com/dannyboy849">Code (coming soon)</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="feature reverse">
+      <div class="feature-media">
+        <img src="assets/fleet.jpeg" alt="Five-drone research fleet with stereo cameras and onboard computers" onerror="placeholder(this)">
+      </div>
+      <div class="feature-body">
+        <p class="tag mono">Dissertation · multi-robot · GPS-denied</p>
+        <h3>Drone teams without GNSS</h3>
+        <p>Estimation and predictive control for a team of drones that share decentralized state estimates with calibrated uncertainty, so they keep flying when GPS is unavailable. Built on learned dynamics models and validated on a five-drone fleet with ZED 2i stereo cameras and Jetson Orin Nano computers.</p>
+        <p class="small">In progress · demonstration application: outdoor search and rescue.</p>
+      </div>
+    </article>
+  </section>
+
+  <!-- hardware spotlight -->
+  <section id="hardware">
+    <h2 class="section-title"><span class="mono">02</span> Hardware spotlight</h2>
+    <article class="spotlight">
+      <div class="spotlight-media">
+        <img src="assets/arcpro.jpg" alt="ARCPro autonomous robot" onerror="placeholder(this)">
+      </div>
+      <div class="spotlight-body">
+        <h3>ARCPro autonomous robot</h3>
+        <p>An autonomous ground robot I designed and built as an undergraduate. It became the platform for computer-vision research and for a hands-on robotics course on vision for autonomous vehicles (IEEE ISEC 2025).</p>
+        <dl class="specs">
+          <dt>Role</dt><dd>Design, build, ROS2 software architecture</dd>
+          <dt>Compute</dt><dd>Intel NUC</dd>
+          <dt>Sensing</dt><dd>Intel D435i Camera, 2D Lidar</dd>
+          <dt>Software</dt><dd>ROS 2, OpenCV, VSLAM</dd>
+          <dt>Used in</dt><dd>Computer-vision research, V2I research; undergraduate robotics course</dd>
+        </dl>
+      </div>
+    </article>
+  </section>
+
+  <!-- project grid -->
+  <section id="projects">
+    <h2 class="section-title"><span class="mono">03</span> Projects</h2>
+    <div class="grid">
+      <article class="card">
+        <img src="assets/cara.jpg" alt="CARA mission planning" onerror="placeholder(this)">
+        <p class="tag mono">UAV · planning · optimization</p>
+        <h3>CARA: risk-aware UAV mission planning</h3>
+        <p>ROS 2 / ArduPilot stack for medical-delivery drones: weather-aware routing, energy-aware trajectories, real-time replanning, and MILP hub placement for the delivery network.</p>
+      </article>
+      <article class="card">
+        <img src="assets/ugv.jpg" alt="UGV navigating a construction site" onerror="placeholder(this)">
+        <p class="tag mono">UGV · prediction · safety</p>
+        <h3>FRANCIS: navigation around people</h3>
+        <p>Predictive control for an autonomous ground robot on construction sites, using learned models of worker behavior to keep clear of people and hazards.</p>
+      </article>
+      <article class="card">
+        <img src="assets/methane.jpg" alt="Drone tracking a gas plume" onerror="placeholder(this)">
+        <p class="tag mono">UAV · perception · NMPC</p>
+        <h3>Methane plume tracking</h3>
+        <p>A drone that finds and follows gas plumes: CNN-based plume segmentation feeding a nonlinear MPC pursuit controller.</p>
+      </article>
+      <article class="card">
+        <img src="assets/mcity.jpg" alt="AirOU M-City autonomous vehicle testbed" onerror="placeholder(this)">
+        <p class="tag mono">Autonomous vehicles · V2I · team lead</p>
+        <h3>AirOU M-City testbed</h3>
+        <p>Led a five-person team building a ROS-based autonomous-vehicle testbed with vehicle-to-infrastructure communication, LiDAR/V-SLAM, and computer vision (IEEE ITSC 2024).</p>
+      </article>
+      <article class="card">
+        <img src="assets/leaf.jpg" alt="Drive-by-wire Nissan Leaf" onerror="placeholder(this)">
+        <p class="tag mono">Vehicle dynamics · control</p>
+        <h3>Data-driven steering control</h3>
+        <p>Steering-dynamics modeling and steering-angle tracking control, tested on a drive-by-wire 2025 Nissan Leaf (MDPI Sensors).</p>
+      </article>
+      <article class="card">
+        <img src="assets/sitl.png" alt="ArduPilot software-in-the-loop simulation" onerror="placeholder(this)">
+        <p class="tag mono">Simulation · tooling</p>
+        <h3>ArduPilot SITL test bench</h3>
+        <p>A real-time software-in-the-loop harness that flies learned controllers against the unmodified ArduPilot flight code, with a scripted pilot for system-identification flights.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- publications -->
+  <section id="publications">
+    <h2 class="section-title"><span class="mono">04</span> Publications</h2>
+    <ol class="pubs">
+      <li><span class="me">Vargas, D.</span>, Habibi, G. "Learning Only What Matters: State-Selective Residual Models for Predictive Control." <em>Manuscript in preparation.</em></li>
+      <li>Simpore, F., <span class="me">Vargas, D.</span>, et al. "Data-Driven Steering Dynamics Modeling and Steering Angle Tracking Control for Self-Driving Vehicles: Simulation and Experiments on 2025 Nissan Leaf Electric Vehicle." <em>Sensors</em>, 2026.</li>
+      <li><span class="me">Vargas, D.</span>, et al. "Design and Implementation of Smart Infrastructures and Connected Vehicles in a Mini-City Platform." <em>IEEE ITSC</em>, 2024.</li>
+      <li>Habibi, G., Billerbeck, S., <span class="me">Vargas, D.</span>, et al. "Development of a Hands-On Robotic Course on Computer Vision for Autonomous Vehicles." <em>IEEE ISEC</em>, 2025.</li>
+      <li>Dalton, C., Mubassira, S., <span class="me">Vargas, D.</span>, Haldavnekar, R. "Reverse Engineering the Pre-Capstone Experience: A Practice-Oriented Model for Industry-Relevant Engineering Education." <em>ASEE Annual Conference</em>, 2026.</li>
+    </ol>
+  </section>
+
+  <!-- skills -->
+  <section id="skills">
+    <h2 class="section-title"><span class="mono">05</span> Skills</h2>
+    <div class="skills">
+      <div><h4>Control &amp; Optimization</h4><p>MPC/NMPC (real-time), learning-based control, LQR, trajectory optimization, QP/NLP/MILP, system identification</p></div>
+      <div><h4>Estimation &amp; Perception</h4><p>EKF/UKF, sensor fusion, SLAM/V-SLAM, LiDAR odometry, computer vision, object tracking</p></div>
+      <div><h4>Machine Learning</h4><p>PyTorch, scikit-learn, neural-network and Gaussian-process dynamics models, CNNs, Optuna</p></div>
+      <div><h4>Robotics Software</h4><p>ROS 2, ArduPilot/PX4, MAVLink, SITL, Gazebo, CasADi/IPOPT, OpenCV; Python, C/C++, MATLAB, Docker, Git</p></div>
+    </div>
+  </section>
+
+  <!-- contact -->
+  <section id="contact" class="contact">
+    <h2>Let's talk</h2>
+    <p>Open to robotics, autonomy, and controls research internships for summer 2027.</p>
+    <a class="btn primary" href="mailto:dvargas88@ou.edu">
+      dvargas88@ou.edu</a>
+  </section>
+</main>
+
+<footer>
+  <p class="mono small">© <span id="year"></span> Daniel Vargas · Norman, OK</p>
+</footer>
+
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
